@@ -13,9 +13,10 @@
 
   body {
     font-family: "Songti TC", "SimSun", serif;
-    background-color: #f8f6f2;
+    background: linear-gradient(135deg, #f8f6f2 0%, #f0eae2 100%);
     color: #222;
     line-height: 1.8;
+    min-height: 100vh;
   }
 
   .back-home {
@@ -26,6 +27,11 @@
     height: 48px;
     cursor: pointer;
     z-index: 999;
+    transition: transform 0.3s ease;
+  }
+
+  .back-home:hover {
+    transform: scale(1.1);
   }
 
   .menu {
@@ -34,10 +40,11 @@
     right: 20px;
     display: flex;
     gap: 14px;
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
     padding: 10px 14px;
     border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     z-index: 999;
   }
 
@@ -46,19 +53,27 @@
     height: 48px;
     cursor: pointer;
     border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .menu img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
   }
 
   .container {
     max-width: 760px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
   }
 
   .title {
     font-size: 36px;
     text-align: center;
-    margin: 50px 0 20px;
+    margin: 50px 0 30px;
     font-weight: normal;
+    color: #1a1a1a;
+    letter-spacing: 2px;
   }
 
   .cover {
@@ -66,8 +81,13 @@
     max-width: 400px;
     display: block;
     margin: 0 auto 40px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+  }
+
+  .cover:hover {
+    transform: scale(1.02);
   }
 
   .content {
@@ -75,39 +95,62 @@
     text-align: justify;
     margin-bottom: 30px;
     white-space: pre-line;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   }
 
   .section {
     display: none;
+    animation: fadeIn 0.5s ease;
   }
 
   .section.active {
     display: block;
   }
 
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   .img-box {
     width: 80%;
     max-width: 500px;
     margin: 25px auto;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   }
 
   .img-box img {
     width: 100%;
     display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .img-box img:hover {
+    transform: scale(1.05);
   }
 
   audio {
     display: block;
     width: 100%;
-    margin: 10px 0;
+    margin: 15px 0;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   }
 
   .section-title {
     font-size: 24px;
     margin: 40px 0 20px;
     text-align: center;
+    color: #333;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 10px;
   }
 </style>
 </head>
