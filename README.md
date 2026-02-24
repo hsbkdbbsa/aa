@@ -127,7 +127,7 @@
   <!-- 首頁 -->
   <div class="section active" id="home">
     <h1 class="title">關於《十七》</h1>
-    <img class="cover" src="mv-cover.jpg" alt="封面">
+    <img class="cover" src="mv-cover.JPG" alt="封面">
     <div class="content">
       點擊右上角圖示可閱讀製作相關內容。
     </div>
